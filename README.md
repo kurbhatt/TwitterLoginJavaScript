@@ -10,6 +10,20 @@ Steps:
   - Copy paste your Consumer Key in “client_id” and your Consumer Secret in “client_secret” then save
   - You can click on Try Auth to check everything is working as expected: it’s what your users will see.
 
+Code Change:
+
+```javascript
+OAuth.initialize("YOUR_OAUTHIO_PUBLIC_KEY")
+OAuth.popup('twitter').then(function(twitter) {
+    //here your user is connected with Twitter
+    return twitter.me() //retrieve your user’s personal information
+}).done(function(me) {
+    console.log(me) //`me` contains your user's information
+}).catch(function(error) {
+    //TODO when an error occured
+    console.log(error)
+})
+```
 
 For further Query or Found any Issue Please Contact:
 
